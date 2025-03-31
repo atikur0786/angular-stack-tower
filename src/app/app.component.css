@@ -1,0 +1,14 @@
+.container {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  overflow-y: auto;
+  background-color: bisque;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
