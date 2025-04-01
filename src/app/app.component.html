@@ -1,6 +1,16 @@
 <div class="container">
   <h1>Angular Stack Tower</h1>
+
+  @if (items.length > 0) {
   <app-stack-tower />
+  }
+  @else {
+  <p>No items in the stack please add one</p>
+  }
 
-
+  <button class="btn btn-primary">Push Item</button>
+  <button class="btn btn-primary">Pop Item</button>
+  <button class="btn btn-primary">Peek</button>
+  <button class="btn btn-primary">Is Empty</button>
+  <button class="btn btn-primary">Length</button>
 </div>

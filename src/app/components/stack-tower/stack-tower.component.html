@@ -1,3 +1,5 @@
 <div class="stack">
-    <p></p>
+    @for (item of items; track $index) {
+    <p>{{ item.name }}</p>
+    }
 </div>
