@@ -1,16 +1,47 @@
 <div class="container">
   <h1>Angular Stack Tower</h1>
 
-  @if (items.length > 0) {
-  <app-stack-tower />
-  }
-  @else {
-  <p>No items in the stack please add one</p>
-  }
+  <div class="row g-0">
+    <div class="col-4">
+      <div class="col d-flex flex-column justify-content-start align-items-start gap-3 p-2">
+        <button class="btn btn-success" (click)="addItemToStack()">Push Item</button>
+        <button class="btn btn-danger" (click)="pop()">Pop Item</button>
+        <button class="btn btn-info" (click)="peek()">Peek</button>
+        <button class="btn btn-warning" (click)="isEmpty()">Is Empty</button>
+        <button class="btn btn-secondary" (click)="length()">Length</button>
+      </div>
+    </div>
+    <div class="col-8">
 
-  <button class="btn btn-primary">Push Item</button>
-  <button class="btn btn-primary">Pop Item</button>
-  <button class="btn btn-primary">Peek</button>
-  <button class="btn btn-primary">Is Empty</button>
-  <button class="btn btn-primary">Length</button>
+      <!-- Stack Tower Peek -->
+      @if (peekedItem) {
+      <div class="col d-flex justify-content-center align-items-center gap-3 p-2">
+        <p>Peek Item: {{ peekedItem.name }} | {{ peekedItem.description }}</p>
+      </div>
+      }
+
+      <!-- Is Stack Tower Empty -->
+      @if (isStackEmpty) {
+      <div class="col d-flex justify-content-center align-items-center gap-3 p-2">
+        <p>Stack is empty</p>
+      </div>
+      }
+
+      <!-- Stack Tower Length -->
+      @if (items) {
+      <div class="col d-flex justify-content-center align-items-center gap-3 p-2">
+        <p>Stack Length: {{ stackLength }}</p>
+      </div>
+      }
+
+      <div class="col d-flex justify-content-center align-items-center gap-3 p-2">
+        @if (items.length > 0) {
+        <app-stack-tower [items]="items" />
+        }
+        @else {
+        <p>No items in the stack please add one</p>
+        }
+      </div>
+    </div>
+  </div>
 </div>

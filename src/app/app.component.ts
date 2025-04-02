@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StackTowerComponent } from './components/stack-tower/stack-tower.component';
 import { StackItem } from './models/stack-item.model';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,12 @@ import { StackItem } from './models/stack-item.model';
 })
 export class AppComponent {
   items: StackItem[] = [];
+
+  peekedItem!: StackItem;
+
+  isStackEmpty: boolean = false;
+
+  stackLength: number = 0;
 
   // Add a new item to the stack
   push(item: StackItem): void {
@@ -23,22 +30,36 @@ export class AppComponent {
   }
 
   // Get the top item from the stack without removing it
-  peek(): StackItem[] {
-    return this.items;
+  peek(): StackItem {
+    this.peekedItem = this.items[this.items.length - 1];
+
+    return this.peekedItem;
   }
 
   // Check if the stack is empty
   isEmpty(): boolean {
-    return this.items.length === 0;
+    this.isStackEmpty = this.items.length === 0;
+    console.log(this.isStackEmpty);
+    return this.isStackEmpty;
   }
 
   // Get the number of items in the stack
   length(): number {
-    return this.items.length;
+    this.stackLength = this.items.length;
+    return this.stackLength;
   }
 
   // Clear all items from the stack
   clear(): void {
     this.items = [];
+  }
+
+  addItemToStack(): void {
+    const newItem: StackItem = {
+      id: this.items.length + 1,
+      name: `Item ${this.items.length + 1}`,
+      description: `Description for Item ${this.items.length + 1}`,
+    };
+    this.push(newItem);
   }
 }

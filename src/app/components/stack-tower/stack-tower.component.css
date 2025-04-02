@@ -2,4 +2,13 @@
   width: 400px;
   height: 40px;
   background-color: aqua;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stack p {
+  margin: 0;
 }
