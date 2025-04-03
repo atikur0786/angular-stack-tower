@@ -1,5 +1,13 @@
-@for (item of items.reverse(); track $index) {
-<div class="stack">
-    <p>{{ item.name }}</p>
+<div class="stack-tower">
+    @for (item of items.reverse(); track $index) {
+    <div class="stack-item" [attr.data-index]="$index">
+        <div class="stack-content">
+            <span class="stack-name">{{ item.name }}</span>
+            @if (item.description) {
+            <span class="stack-description">{{ item.description }}</span>
+            }
+        </div>
+        <div class="stack-index">{{ $index + 1 }}</div>
+    </div>
+    }
 </div>
-}

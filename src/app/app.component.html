@@ -1,45 +1,62 @@
 <div class="container">
-  <h1>Angular Stack Tower</h1>
+  <header>
+    <h1 class="title">Angular Stack Tower</h1>
+  </header>
 
-  <div class="row g-0">
-    <div class="col-4">
-      <div class="col d-flex flex-column justify-content-start align-items-start gap-3 p-2">
-        <button class="btn btn-success" (click)="addItemToStack()">Push Item</button>
-        <button class="btn btn-danger" (click)="pop()">Pop Item</button>
-        <button class="btn btn-info" (click)="peek()">Peek</button>
-        <button class="btn btn-warning" (click)="isEmpty()">Is Empty</button>
-        <button class="btn btn-secondary" (click)="length()">Length</button>
+  <div class="stack-container">
+    <div class="controls-panel">
+      <div class="button-group">
+        <button class="btn push-btn" (click)="addItemToStack()">
+          <i class="fas fa-plus-circle"></i> Push Item
+        </button>
+        <button class="btn pop-btn" (click)="pop()">
+          <i class="fas fa-minus-circle"></i> Pop Item
+        </button>
+        <button class="btn peek-btn" (click)="peek()">
+          <i class="fas fa-eye"></i> Peek
+        </button>
+        <button class="btn empty-btn" (click)="isEmpty()">
+          <i class="fas fa-question-circle"></i> Is Empty
+        </button>
+        <button class="btn length-btn" (click)="length()">
+          <i class="fas fa-ruler"></i> Length
+        </button>
       </div>
     </div>
-    <div class="col-8">
 
+    <div class="display-panel">
       <!-- Stack Tower Peek -->
       @if (peekedItem) {
-      <div class="col d-flex justify-content-center align-items-center gap-3 p-2">
-        <p>Peek Item: {{ peekedItem.name }} | {{ peekedItem.description }}</p>
+      <div class="info-card peek-card">
+        <h3>Peek Result</h3>
+        <p>{{ peekedItem.name }} | {{ peekedItem.description }}</p>
       </div>
       }
 
       <!-- Is Stack Tower Empty -->
-      @if (isStackEmpty) {
-      <div class="col d-flex justify-content-center align-items-center gap-3 p-2">
-        <p>Stack is empty</p>
+      <div class="info-card empty-card">
+        <h3>Stack Status</h3>
+        <p [class.empty-true]="isStackEmpty" [class.empty-false]="!isStackEmpty">
+          {{ isStackEmpty ? 'Stack is empty' : 'Stack is not empty' }}
+        </p>
       </div>
-      }
 
       <!-- Stack Tower Length -->
       @if (items) {
-      <div class="col d-flex justify-content-center align-items-center gap-3 p-2">
-        <p>Stack Length: {{ stackLength }}</p>
+      <div class="info-card length-card">
+        <h3>Stack Length</h3>
+        <p>{{ stackLength }}</p>
       </div>
       }
 
-      <div class="col d-flex justify-content-center align-items-center gap-3 p-2">
+      <div class="stack-display">
         @if (items.length > 0) {
         <app-stack-tower [items]="items" />
-        }
-        @else {
-        <p>No items in the stack please add one</p>
+        } @else {
+        <div class="empty-stack-message">
+          <i class="fas fa-layer-group"></i>
+          <p>No items in the stack. Please add one!</p>
+        </div>
         }
       </div>
     </div>

@@ -8,3 +8,27 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --info-color: #1abc9c;
+  --dark-color: #34495e;
+  --light-color: #ecf0f1;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  --stack-primary: #3498db;
+  --stack-secondary: #2ecc71;
+  --stack-accent: #9b59b6;
+  --stack-light: #ecf0f1;
+  --stack-dark: #34495e;
+  --stack-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --stack-hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --stack-border-radius: 8px;
+  --stack-transition: all 0.3s ease;
+}

@@ -1,14 +1,122 @@
-.stack {
-  width: 400px;
-  height: 40px;
-  background-color: aqua;
-  margin-bottom: 14px;
-  border-radius: 8px;
+.stack-tower {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.stack-item {
+  width: 100%;
+  min-height: 60px;
+  background: linear-gradient(135deg, var(--stack-primary) 0%, #4dabf7 100%);
+  border-radius: var(--stack-border-radius);
+  box-shadow: var(--stack-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: var(--stack-transition);
+}
+
+.stack-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--stack-hover-shadow);
+}
+
+.stack-item:nth-child(3n + 1) {
+  background: linear-gradient(135deg, var(--stack-primary) 0%, #4dabf7 100%);
+}
+
+.stack-item:nth-child(3n + 2) {
+  background: linear-gradient(135deg, var(--stack-secondary) 0%, #7bed9f 100%);
+}
+
+.stack-item:nth-child(3n + 3) {
+  background: linear-gradient(135deg, var(--stack-accent) 0%, #cd84f1 100%);
+}
+
+.stack-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.stack-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.stack-description {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.stack-index {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
-.stack p {
-  margin: 0;
+/* Add a subtle plate effect to the bottom of each stack item */
+.stack-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 var(--stack-border-radius) var(--stack-border-radius);
+}
+
+/* Add animation for new items */
+@keyframes stackIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stack-item {
+  animation: stackIn 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .stack-item {
+    min-height: 50px;
+    padding: 0 15px;
+  }
+
+  .stack-name {
+    font-size: 1rem;
+  }
+
+  .stack-description {
+    font-size: 0.75rem;
+  }
+
+  .stack-index {
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+  }
 }

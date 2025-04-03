@@ -39,7 +39,6 @@ export class AppComponent {
   // Check if the stack is empty
   isEmpty(): boolean {
     this.isStackEmpty = this.items.length === 0;
-    console.log(this.isStackEmpty);
     return this.isStackEmpty;
   }
 
