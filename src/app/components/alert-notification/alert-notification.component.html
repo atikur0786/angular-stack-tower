@@ -1,0 +1,9 @@
+<div [className]="alertClass()">
+    <div class="alert-text">
+        <h3>{{message}}</h3>
+        <p>{{description}}</p>
+    </div>
+    <div class="close" (click)="closeAlert()">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
+</div>

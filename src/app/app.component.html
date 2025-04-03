@@ -62,3 +62,8 @@
     </div>
   </div>
 </div>
+
+@if (showAlert) {
+<app-alert-notification [message]="alertMessage" [description]="alertDescription" [alertType]="alertType"
+  (closeAlertEvent)="closeAlert()" />
+}

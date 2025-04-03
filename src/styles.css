@@ -32,3 +32,11 @@ body {
   --stack-border-radius: 8px;
   --stack-transition: all 0.3s ease;
 }
+
+:root {
+  --alert-success: #2ecc71;
+  --alert-info: #3498db;
+  --alert-warning: #f39c12;
+  --alert-danger: #e74c3c;
+  --alert-primary: #7ac2f1;
+}
