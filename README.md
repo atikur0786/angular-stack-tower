@@ -1,27 +1,88 @@
-# AngularStackTower
+# Angular Stack Tower
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+A Tower of Hanoi puzzle game built with Angular. This interactive web application allows users to solve the classic Tower of Hanoi puzzle with customizable difficulty levels.
 
-## Development server
+## 🎮 Preview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Stack Tower Preview](./public/preview.png)
 
-## Code scaffolding
+## ✨ Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Interactive Tower of Hanoi puzzle implementation
+- Multiple difficulty levels (3-7 disks)
+- Move counter and timer
+- Best score tracking
+- Responsive design for desktop and mobile
+- Animated disk movements
+- Game reset and restart functionality
 
-## Build
+## 🚀 Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+- Node.js (v14.x or later)
+- npm (v6.x or later)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
+1. Clone the repository:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+git clone https://github.com/atikur0786/angular-stack-tower.git
+```
 
-## Further help
+2. Navigate to the project directory:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+cd angular-stack-tower
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+ng serve
+```
+
+5. Open your browser and navigate to `http://localhost:4200/`
+
+## 🛠️ Built With
+
+- [Angular](https://angular.io/) - The web framework used
+- [TypeScript](https://www.typescriptlang.org/) - Programming language
+
+## 📝 How to Play
+
+1. The objective is to move all disks from the leftmost tower to the rightmost tower.
+2. Only one disk can be moved at a time.
+3. No disk may be placed on top of a smaller disk.
+4. Use drag and drop or click to select and place disks.
+
+## 🧪 Running Tests
+
+Run unit tests with:
+
+```bash
+ng test
+```
+
+Run end-to-end tests with:
+
+```bash
+ng e2e
+```
+
+## 📱 Responsive Design
+
+The game is fully responsive and works on:
+
+- Desktop browsers
+- Tablets
+- Mobile devices
+
+Project Link: [https://github.com/atikur0786/angular-stack-tower](https://github.com/atikur0786/angular-stack-tower)
